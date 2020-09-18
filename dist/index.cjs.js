@@ -9297,13 +9297,13 @@ var pageScrollTo = function pageScrollTo(_ref) {
       var from = scrollFunc();
       var to = scrollTop;
       var delta = to - from;
-      var frameCnt = duration / FRAME_DURATION;
+var frameCnt = duration / FRAME_DURATION - 1;
       var easeFunc = getTimingFunc(easeInOut, frameCnt);
 
       var scroll = function scroll() {
         var frame = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
         var dest = from + delta * easeFunc(frame);
-        scrollFunc(dest);
+;(frame<frameCnt)&&scrollFunc(dest);
 
         if (frame < frameCnt) {
           timer && clearTimeout(timer);
@@ -9314,7 +9314,7 @@ var pageScrollTo = function pageScrollTo(_ref) {
           var res = {
             errMsg: 'pageScrollTo:ok'
           };
-          success && success(res);
+scrollFunc(to);success && success(res);
           complete && complete();
           resolve(res);
         }
