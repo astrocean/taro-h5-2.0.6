@@ -5721,7 +5721,7 @@ function (_PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "handleTouchStart", function (event) {
       // console.info('handleTouchStart')
-      event.preventDefault();
+      // event.preventDefault();
       event.stopPropagation();
 
       if (_this.animationID) {

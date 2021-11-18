@@ -192,7 +192,7 @@ class ImageContainer extends PureComponent {
 
   handleTouchStart = (event) => {
     // console.info('handleTouchStart')
-    event.preventDefault()
+    // event.preventDefault()
     event.stopPropagation()
     if (this.animationID) {
       raf.cancel(this.animationID)
